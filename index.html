@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="yay.png">
+</head>
+<body>
+    <form id="weatherForm">
+        <label for="country">Enter your country:</label><br>
+        <input type="text" id="country" name="country" required><br>
+        
+        <label for="city">Enter your city:</label><br>
+        <input type="text" id="city" name="city" required><br>
+        
+        <button type="submit" class="go">Check Weather</button>
+    </form>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <p>Just watch outside bruh🗿</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
