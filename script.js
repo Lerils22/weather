@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('weatherForm');
     const overlay = document.getElementById('overlay');
+    const loading = document.getElementById('loading');
     const popup = document.getElementById('popup');
 
     form.addEventListener('submit', function(event) {
@@ -11,16 +12,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (country && city) {
             overlay.style.display = 'block';
-            popup.style.display = 'block'; 
+            loading.style.display = 'block';
+
+            // Simulate a loading delay (e.g., fetching API data)
+            setTimeout(() => {
+                loading.style.display = 'none';  // Hide loading screen
+                popup.style.display = 'block';  // Show popup result
+            }, 2000);  // 2-second delay
         } else {
             alert("Please enter both country and city!");
         }
     });
 
-    function closePopup() {
+    window.closePopup = function() {
         overlay.style.display = 'none';
         popup.style.display = 'none';
-    }
-
-    window.closePopup = closePopup;
+    };
 });
